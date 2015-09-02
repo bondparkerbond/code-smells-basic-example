@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1>Show ~Individual~ Owner</h1>
+
+  First Name: <%= @owner.first_name %>
+  <br>Last Name: <%= @owner.last_name %>
+  <br>Age: <%= @owner.age %>
+  <br>Race: <%= @owner.race %>
+  <br>Location: <%= @owner.location %><br><br> 
+
 
 <%= link_to 'Edit', edit_owner_path(@owner) %> |
 <%= link_to 'Back', owners_path %>

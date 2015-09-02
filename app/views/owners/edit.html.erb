@@ -1,6 +1,26 @@
-<h1>Editing Owner</h1>
+<h1>Editing ~Individual~ Owner</h1>
 
-<%= render 'form' %>
+<%= form_for @owner do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name%>
 
-<%= link_to 'Show', @owner %> |
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name%>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+
+  <%= f.label :race %>
+  <%= f.text_field :race %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.submit %>
+
+<% end %>
+
+
+
+<br><%= link_to 'Show', owner_path %> |
 <%= link_to 'Back', owners_path %>
