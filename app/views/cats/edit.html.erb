@@ -1,6 +1,24 @@
 <h1>Editing Cat</h1>
 
-<%= render 'form' %>
+<%= form_for @cat do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name%>
 
-<%= link_to 'Show', @cat %> |
+  <%= f.label :age %>
+  <%= f.text_field :age%>
+
+  <%= f.label :fur_color %>
+  <%= f.text_field :fur_color %>
+
+  <%= f.label :eye_color %>
+  <%= f.text_field :eye_color %>
+
+  <%= f.label :food_type %>
+  <%= f.text_field :food_type %>
+
+  <%= f.submit %>
+
+<% end %>
+
+<%= link_to 'Show', cat_path %> |
 <%= link_to 'Back', cats_path %>

@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1>Show ~Individual~ Cat</h1>
 
+Name: <%= @cat.name %>
+<br>Age: <%= @cat.age %>
+<br>Fur Color: <%= @cat.fur_color %>
+<br>Eye Color: <%= @cat.eye_color %>
+<br>Food Type: <%= @cat.food_type %>
+
+<br><br>
 <%= link_to 'Edit', edit_cat_path(@cat) %> |
 <%= link_to 'Back', cats_path %>

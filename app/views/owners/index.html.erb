@@ -1,17 +1,11 @@
-
-
 <h1>Listing Owners</h1>
-
-    <% @owners.each do |owner| %>
-    
-      <br><%= owner.first_name %> <%= owner.last_name %>
-      <br><%= link_to 'Show', owner %> |
-      <%= link_to 'Edit', edit_owner_path(owner) %> |  
-      <%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <br>
-    <% end %>
-
-
-<br>
-
-<%= link_to 'New Owner', new_owner_path %>
+  
+<% @owners.each do |owner| %>
+  
+  <br><%= owner.first_name %> <%= owner.last_name %>
+  <br><%= link_to 'Show', owner %> |
+  <%= link_to 'Edit', edit_owner_path(owner) %> |  
+  <%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <br>
+<% end %>
+<br><%= link_to 'New Owner', new_owner_path %>

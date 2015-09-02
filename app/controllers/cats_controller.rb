@@ -48,6 +48,6 @@ class CatsController < ApplicationController
 
   private
     def cat_params
-      params.require(:cats).permit(:name, :age, :fur_color, :eye_color, :food_type)
+      params.require(:cat).permit(:owner_id, :name, :age, :fur_color, :eye_color, :food_type)
     end
 end
