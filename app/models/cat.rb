@@ -1,11 +1,15 @@
 class Cat < ActiveRecord::Base
   belongs_to :owners
 
-  def full_details(show_all = true)
-    "#{self.name} - #{self.age}"
+  def update_cats(name, age, fur_color, eye_color, food_type, update_food = false)
+    self.cats.each do |cat|
+      cat.name = name
+      cat.age = age
+      cat.fur_color = fur_color
+      cat.eye_color = eye_color
+      cat.food_type = food_type
+      cat.save
+    end
   end
 
-  def owner_details
-    "#{self.owner.name} - #{self.owner.age}"
-  end
 end

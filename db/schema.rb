@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20150714062418) do
 
   create_table "cats", force: :cascade do |t|
+    t.integer  "owner_id"
     t.string   "name"
     t.integer  "age"
     t.string   "fur_color"
     t.string   "eye_color"
     t.string   "food_type"
-    t.integer  "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
