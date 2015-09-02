@@ -19,40 +19,35 @@ class CatsController < ApplicationController
       redirect_to cats_path
     else
       flash[:error] = "cat with id: #{params[:id]} not updated"
-      redirect_to edit_cat_path
+      render :edit
     end
   end
 
-  def new_cat
+  def new
     @cat = Cat.new
   end
 
-  def destory
-    cat_id = params[:id]
+  def destroy
     @cat = Cat.find(params[:id])
-    if @cat
-      if @cat.destroy
-        flash[:success] = "cat destroyed"
-      end
+    if @cat.destroy
+      flash[:success] = "cat destroyed"
     end
-    @cat.id
+    redirect_to cats_path
   end
 
   def create
     @cat = Cat.new(cat_params)
-    if @cat && @cat.save
-      success_message = "cat was successfully saved."
-      flash[:success] = success_message
+    if @cat.save
+      flash[:success] = "cat was successfully saved."
       redirect_to cats_path
     else
-      error_message = "cat was not succesfully saved."
-      flash[:error] = error_message
-      render "new"
+      flash[:error] = "cat was not succesfully saved."
+      render :new
     end
   end
 
   private
     def cat_params
-      params.require(:cats).permit(:name, :age, :fur_color, :eye_color, :food_types)
+      params.require(:cats).permit(:name, :age, :fur_color, :eye_color, :food_type)
     end
 end
