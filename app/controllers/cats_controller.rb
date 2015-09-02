@@ -16,7 +16,7 @@ class CatsController < ApplicationController
 
     if @cat.update(cat_params)
       flash[:success] = "cat with id: #{params[:id]} updated"
-      redirect_to cats_path
+      redirect_to owner_path(@cat.owner_id)
     else
       flash[:error] = "cat with id: #{params[:id]} not updated"
       render :edit
@@ -32,14 +32,14 @@ class CatsController < ApplicationController
     if @cat.destroy
       flash[:success] = "cat destroyed"
     end
-    redirect_to cats_path
+    redirect_to owner_path(@cat.owner_id)
   end
 
   def create
     @cat = Cat.new(cat_params)
     if @cat.save
       flash[:success] = "cat was successfully saved."
-      redirect_to cats_path
+      redirect_to owner_path(@cat.owner_id)
     else
       flash[:error] = "cat was not succesfully saved."
       render :new

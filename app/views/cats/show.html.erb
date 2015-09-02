@@ -8,4 +8,4 @@ Name: <%= @cat.name %>
 
 <br><br>
 <%= link_to 'Edit', edit_cat_path(@cat) %> |
-<%= link_to 'Back', cats_path %>
+<%= link_to 'Back', owner_path(@cat.owner_id) %>

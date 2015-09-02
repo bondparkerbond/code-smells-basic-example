@@ -5,6 +5,7 @@ class OwnersController < ApplicationController
 
   def show
     @owner = Owner.find(params[:id])
+    @cats = Cat.where(owner_id: params[:id])
   end
 
   def update
