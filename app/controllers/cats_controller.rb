@@ -25,6 +25,7 @@ class CatsController < ApplicationController
 
   def new
     @cat = Cat.new
+    @owner = Owner.where(id: params[:owner_id])
   end
 
   def destroy
@@ -36,6 +37,7 @@ class CatsController < ApplicationController
   end
 
   def create
+    @owner = Owner.where(id: params[:id])
     @cat = Cat.new(cat_params)
     if @cat.save
       flash[:success] = "cat was successfully saved."
