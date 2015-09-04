@@ -8,6 +8,7 @@ class CatsController < ApplicationController
   end
 
   def edit
+    @owner = Owner.find(params[:owner_id])
     @cat = Cat.find(params[:id])
   end
 
@@ -24,8 +25,8 @@ class CatsController < ApplicationController
   end
 
   def new
-    @cat = Cat.new
-    @owner = Owner.where(id: params[:owner_id])
+    @owner = Owner.find(params[:owner_id])
+    @cat = @owner.cats.new
   end
 
   def destroy

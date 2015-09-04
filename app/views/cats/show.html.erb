@@ -7,5 +7,5 @@ Name: <%= @cat.name %>
 <br>Food Type: <%= @cat.food_type %>
 
 <br><br>
-<%= link_to 'Edit', edit_cat_path(@cat) %> |
+<%= link_to 'Edit', edit_owner_cat_path(@cat.owner_id, @cat) %> |
 <%= link_to 'Back', owner_path(@cat.owner_id) %>

@@ -1,6 +1,10 @@
 <h1>Editing Cat</h1>
 
-<%= form_for @cat do |f| %>
+<%= form_for [@owner, @cat] do |f| %>
+
+  <%= f.label :owner_id %>
+  <%= f.text_field :owner_id%>
+
   <%= f.label :name %>
   <%= f.text_field :name%>
 
@@ -20,5 +24,5 @@
 
 <% end %>
 
-<%= link_to 'Show', cat_path %> |
-<%= link_to 'Back', cats_path %>
+<%= link_to 'Show', owner_cat_path %> |
+<%= link_to 'Back', owner_path(@cat.owner_id) %>

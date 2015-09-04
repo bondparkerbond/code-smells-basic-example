@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   root 'owners#index'
-  resources :owners
-  resources :cats
+  resources :owners do
+    resources :cats
+  end
+
   
   # get 'owners/index'
 

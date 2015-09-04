@@ -1,15 +1,15 @@
 <h1>New Cat</h1>
 
-<%= form_for @cat do |f| %>
+<%= form_for [@owner, @cat] do |f| %>
   <!-- :owner_id = :id -->
   <%= f.label :owner_id %>
-  <%= f.text_field :owner_id%>
+  <%= f.text_field :owner_id %>
 
   <%= f.label :name %>
-  <%= f.text_field :name%>
+  <%= f.text_field :name %>
 
   <%= f.label :age %>
-  <%= f.text_field :age%>
+  <%= f.text_field :age %>
 
   <%= f.label :fur_color %>
   <%= f.text_field :fur_color %>
@@ -23,5 +23,3 @@
   <%= f.submit %>
 
 <% end %>
-
-<%= link_to 'Back', cats_path %>
